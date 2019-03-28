@@ -1,5 +1,11 @@
 # Utilizando o pipenv
 
+## Ativar virtual env
+
+```bash
+pipenv shell
+```
+
 ## Instalação
 
 Para instalar o pipenv utilize o comando
