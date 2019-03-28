@@ -18,7 +18,7 @@ export default new Vuex.Store({
   },
   actions: {
     startClientes: context => {
-      return axios.get('contabilidade/clientes').then(
+      return axios.get('contabilidade/clientes/').then(
         response => {
           context.commit('CHANGE_CLIENTES', response.data)
         }

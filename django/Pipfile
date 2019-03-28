@@ -8,10 +8,10 @@ sqlformatter = "*"
 notebook = "*"
 
 [packages]
-django = "==2.0.7"
+django = "*"
 django-extensions = "*"
 djangorestframework = "*"
-django-cors-headers = "==2.4.0"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"
