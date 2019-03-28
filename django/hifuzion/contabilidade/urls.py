@@ -5,6 +5,6 @@ from hifuzion.contabilidade.views import ClienteViewSet, PlanoContaViewSet
 router = routers.DefaultRouter()
 
 router.register('clientes', ClienteViewSet)
-router.register('planocontas', PlanoContaViewSet)
+router.register('contas', PlanoContaViewSet)
 
 urlpatterns = router.urls

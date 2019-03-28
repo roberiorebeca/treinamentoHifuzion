@@ -9,8 +9,8 @@ class ClienteViewSet(viewsets.ModelViewSet):
 
 
 class PlanoContaViewSet(viewsets.ModelViewSet):
-    queryset = PlanoConta.objects.all()
+    queryset = PlanoConta.objects.all().order_by('nome')
     serializer_class = PlanoContaSerializer
 
     def create(self, request, *args, **kwargs):
-        return super().create(*args, **kwargs)
+        return super().create(request, *args, **kwargs)

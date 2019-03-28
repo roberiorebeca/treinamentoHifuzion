@@ -1,5 +1,5 @@
 <template>
-  <div id="hfz-lista-cliente">
+  <div id="hfz-lista">
     <h1>{{ titulo }}</h1>
     <v-data-table
       :headers="headers"
@@ -12,6 +12,20 @@
         <td>{{ props.item.fone }}</td>
         <td>{{ props.item.email }}</td>
         <td>{{ props.item.conta_display }}</td>
+        <td class="justify-center layout pa-3">
+          <v-icon
+            small
+            class="mr-2"
+            @click="editItem(props.item)"
+          >
+            edit
+          </v-icon>
+          <hfz-remove :item="props.item"
+                      :api-remove="apiRemove"
+                      btnConfirmarColor="orange"
+                      @itemRemoved="itemRemoved"/>
+
+        </td>
       </template>
     </v-data-table>
   </div>
@@ -32,6 +46,18 @@ export default {
     data: {
       type: Array,
       default: () => []
+    },
+    apiRemove: {
+      type: Function,
+      required: true
+    }
+  },
+  methods: {
+    editItem (item) {
+      this.$emit('editar', item)
+    },
+    itemRemoved () {
+      this.$emit('reload')
     }
   }
 }
